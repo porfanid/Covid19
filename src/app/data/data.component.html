@@ -1,0 +1,49 @@
+<table>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Cases</th>
+    <th>Cases in Percentage</th>
+    <th>Total Cases</th>
+    <th>Total Cases Percentage</th>
+    <th>Deaths</th>
+    <th>Deaths in Percentage</th>
+    <th>Total Deaths</th>
+    <th>Total Deaths in percentage</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <ng-container *ngIf="data">
+  <tr *ngFor="let row of data.record.reverse()">
+    <td><strong>{{row.dateRep}}</strong></td>
+    <td>{{row.cases}}</td>
+    <td>{{(toInt(row.cases)/toInt(row.popData2018)*100)}}%</td>
+    <td>{{row.sumCases}}</td>
+    <td>{{(toInt(row.sumCases)/toInt(row.popData2018)*100)}}%</td>
+    <td>{{row.deaths}}</td>
+    <td>{{(toInt(row.deaths)/toInt(row.popData2018)*100)}}%</td>
+    <td>{{row.sumDeaths}}</td>
+    <td>{{(toInt(row.sumDeaths)/toInt(row.popData2018)*100)}}%</td>
+    <td>{{row.countriesAndTerritories}}</td>
+  </tr>
+  </ng-container>
+  </tbody>
+
+</table>
+<!--
+<li *ngFor="let row of data">
+  {{row.dateRep}}
+  {{row.day}}
+  {{row.month}}
+  {{row.year}}
+  {{row.cases}}
+  {{row.deaths}}
+  {{row.countriesAndTerritories}}
+  {{row.geoId}}
+  {{row.countryterritoryCode}}
+  {{row.popData2018}}
+  {{row.continentExp}}
+</li>
+-->

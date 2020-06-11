@@ -1,0 +1,95 @@
+<div class="body">
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-32">
+    <h1><b>Covid - 19</b></h1>
+    <p>Welcome to the data website for <span class="w3-tag">Covid - 19</span></p>
+  </header>
+
+  <!-- Grid -->
+  <div class="w3-row">
+
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+      <!-- Blog entry -->
+      <div class="w3-card-4 w3-margin w3-white">
+        <img src="https://ec.europa.eu/programmes/creative-europe/sites/creative-europe/files/covid19-cdc-unsplash.jpg" alt="Nature" style="width:100%">
+        <div class="w3-container">
+          <h3><b>Select Country: </b></h3>
+          <h5>Select the country you want to view the data about</h5>
+        </div>
+
+        <div class="w3-container">
+          <p style="text-align: center;">
+            <select [ngModel]="selectedOption" (ngModelChange)="changeValue($event)" class="selectpicker">
+              <optgroup label="Countries">
+                <option *ngFor="let country of countries.reverse()" value="{{country}}">
+                  {{this.dataService.getCountryName(country)}}
+                </option>
+              </optgroup>
+            </select>
+          </p>
+          <div class="w3-row">
+            <div class="w3-col m8 s12">
+              <p><button (click)="makeData()" class="w3-button w3-padding-large w3-white w3-border"><b>View Data Table »</b></button></p>
+            </div>
+            <div class="w3-col m4 w3-hide-small">
+              <p><button (click)="makeBarchart()" class="w3-button w3-padding-large w3-white w3-border"><b>View Data Charts »</b></button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Blog entry -->
+      <div class="w3-card-4 w3-margin w3-white">
+        <div class="w3-container">
+          <h3><b>Data</b></h3>
+          <h5>The covid-19 data for the country you have chosen</h5>
+        </div>
+
+        <div style="overflow-y: auto;overflow-x:auto;height: 60vh;" class="w3-container">
+          <app-data *ngIf="dataOrBarchart==='countries'"></app-data>
+          <app-barchart *ngIf="dataOrBarchart==='barchart'"></app-barchart>
+        </div>
+      </div>
+      <!-- END BLOG ENTRIES -->
+    </div>
+
+    <!-- Introduction menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div style="overflow-y: auto;overflow-x:auto;height: 60vh;" class="w3-card w3-margin w3-margin-top">
+        <app-rss-feed rssUurl='https://eody.gov.gr/feed/'></app-rss-feed>
+      </div>
+      <hr>
+
+      <!-- Posts -->
+      <div class="w3-card w3-margin">
+        <app-rss-feed rssUurl="https://www.902.gr/feed/31"></app-rss-feed>
+      </div>
+      <hr>
+
+
+
+      <!-- END Introduction Menu -->
+    </div>
+
+    <!-- END GRID -->
+  </div><br>
+
+  <!-- END w3-content -->
+</div>
+<!-- Footer -->
+<!--
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+-->
+</div>
