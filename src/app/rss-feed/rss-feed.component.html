@@ -1,6 +1,6 @@
 <img *ngIf="image" src="{{image}}" style="width:100%">
 <div class="w3-container w3-white">
-  <h4><b><a href="{{link}}" target="_blank" >{{title}}({{description}})</a></b></h4>
+  <h4><b><a href="{{link}}" target="_blank" >{{title}}<span *ngIf="description">({{description}})</span></a></b></h4>
   <table mat-table
          [dataSource]="feeds" multiTemplateDataRows
          class="mat-elevation-z8">
@@ -19,7 +19,7 @@
           </div>
           <div class="example-element-description" >
             <a href="{{element.link}}" target="_blank" class="btn btn-danger">link to the article</a><br>
-            <span [innerHTML]="element.content" class="example-element-description-attribution">  </span>
+            <span [innerHTML]="element.description" class="example-element-description-attribution">  </span>
           </div>
         </div>
       </td>

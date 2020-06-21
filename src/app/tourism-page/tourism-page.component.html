@@ -1,0 +1,96 @@
+<div class="body">
+
+  <!-- w3-content defines a container for fixed size centered content,
+  and is wrapped around the whole page content, except for the footer in this example -->
+  <div class="w3-content" style="max-width:1400px">
+
+    <app-head-title></app-head-title>
+
+    <!-- Grid -->
+    <div class="w3-row">
+
+      <!-- Blog entries -->
+      <div class="w3-col l8 s12">
+        <!-- Blog entry -->
+        <div class="w3-card-4 w3-margin w3-white">
+          <img src="https://ec.europa.eu/programmes/creative-europe/sites/creative-europe/files/covid19-cdc-unsplash.jpg" alt="Nature" style="width:100%">
+          <div class="w3-container">
+            <h3><b>Should you go on vacation?</b></h3>
+            <h5>Is this pandemic still dangerous? Or not? </h5>
+          </div>
+        </div>
+        <hr>
+
+        <!-- Blog entry -->
+        <div class="w3-card-6 w3-margin w3-white">
+          <div class="w3-container">
+            <h3><b>UK to Greece</b></h3>
+            <h5>How to get to Greece</h5>
+          </div>
+
+          <div style="overflow-y: auto;overflow-x:auto;" class="w3-container">
+
+            <p>Until 15 June, everyone arriving in Greece from abroad will be tested for coronavirus, and will be required to go into self-isolation. From 15 June, these requirements will change, but you may still be required to participate in testing and self-isolation/quarantine. See <a href="https://www.gov.uk/foreign-travel-advice/greece/entry-requirements">Entry requirements</a> for more information.</p>
+            <p>But how many people will be on that plane? How many of them may have that virus? What happens if there is one passenger with corona virus?</p>
+            <p>Let's see what happened in the past:</p>
+
+            <div class="w3-card-4 w3-margin w3-white">
+              <div class="w3-container">
+                <h3><b><a href="https://www.ekathimerini.com/253318/article/ekathimerini/news/greece-suspends-qatar-flights-after-12-passengers-test-positive-for-coronavirus" target="_blank">Greece suspends Qatar flights after 12 passengers test positive for coronavirus</a></b></h3>
+              </div>
+              <div style="overflow-y: auto;overflow-x:auto;" class="w3-container">
+                <article>
+                  <p>
+                  Greece on Tuesday announced they were suspending flights to and from Qatar until mid-June, after 12 out of 91 passengers in a Qatar Airways flight that landed in Athens on Monday tested positive for the coronavirus.
+                  </p>
+                  <p>
+                  Nine of the infected passengers are Pakistani nationals, coming from the city of Gujrat, who have a Greek residence permit, two are Greek nationals coming from Australia and one person is a Japanese national and member of a Greek-Japanese family, the General Secretariat for Civil Protection said in a press release.
+                  </p>
+                  <p>
+                  All passengers in the flight from Doha to Athens’ International Airport were tested and quarantined in hotels until they got their results back, in line with the current health protocols.
+                  </p>
+                  <p>
+                  Those infected will remain in the hotels for two weeks, while those who tested negative will have to stay for seven days as they are considered close high and low risk contacts, the authority said.
+                  </p>
+                  <p>
+                  Health officers will repeat the tests on the passengers who tested negative after a week.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <!-- END BLOG ENTRIES -->
+        </div>
+      </div>
+
+      <!-- Introduction menu -->
+      <div class="w3-col l4 s12">
+        <!-- About Card -->
+        <div style="overflow-y: auto;" class="w3-card w3-margin w3-white">
+          <app-rss-feed rssUurl='https://en.internationalism.org/latest/rss'></app-rss-feed>
+        </div>
+        <hr>
+
+        <!-- Posts -->
+        <div class="w3-card w3-margin w3-white">
+          <div class="w3-container">
+            <h3><b>And What do the others say:</b></h3>
+          </div>
+          <div class="w3-container">
+            <div style="overflow-y: auto;" class="w3-card w3-margin w3-white">
+              <app-rss-feed rssUurl='https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en'></app-rss-feed>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!-- END Introduction Menu -->
+      </div>
+
+      <!-- END GRID -->
+    </div>
+    <br>
+
+    <!-- END w3-content -->
+  </div>
+  <!-- Footer -->
+</div>

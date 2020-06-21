@@ -4,11 +4,7 @@
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
 
-  <!-- Header -->
-  <header class="w3-container w3-center w3-padding-32">
-    <h1><b>Covid - 19</b></h1>
-    <p>Welcome to the data website for <span class="w3-tag">Covid - 19</span></p>
-  </header>
+  <app-head-title></app-head-title>
 
   <!-- Grid -->
   <div class="w3-row">
@@ -61,15 +57,15 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
     <!-- Introduction menu -->
-    <div class="w3-col l4">
+    <div class="w3-col l4 s12">
       <!-- About Card -->
-      <div style="overflow-y: auto;overflow-x:auto;height: 60vh;" class="w3-card w3-margin w3-margin-top">
-        <app-rss-feed rssUurl='https://eody.gov.gr/feed/'></app-rss-feed>
+      <div style="overflow-y: auto;height: 60vh;" class="w3-card w3-margin w3-margin-top w3-white">
+        <app-rss-feed rssUurl='https://tools.cdc.gov/api/v2/resources/media/404952.rss'></app-rss-feed>
       </div>
       <hr>
 
       <!-- Posts -->
-      <div class="w3-card w3-margin">
+      <div style="overflow-y: auto;height: 60vh;" class="w3-card w3-margin w3-white">
         <app-rss-feed rssUurl="https://www.902.gr/feed/31"></app-rss-feed>
       </div>
       <hr>
@@ -85,11 +81,4 @@ and is wrapped around the whole page content, except for the footer in this exam
   <!-- END w3-content -->
 </div>
 <!-- Footer -->
-<!--
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
--->
 </div>

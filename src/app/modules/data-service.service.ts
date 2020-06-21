@@ -20,7 +20,7 @@ export class DataServiceService {
     this.countriesDictionary = {};
     this.isComplete = false;
     this.countriesGeoID = {};
-    JSONreader.getJSON(this.url).subscribe(data => {
+    JSONreader.getJSON(this.url, true).subscribe(data => {
       data.records.reverse().forEach((record, index) => {
         if (this.countries.indexOf(record.countriesAndTerritories.toLowerCase()) === -1)
         {
@@ -55,11 +55,18 @@ export class DataServiceService {
           geoId: record.geoId
         });
       });
+      this.countries.forEach(country => {
+        this.tempList[country].record = this.tempList[country].record.sort((a, b) => {
+          return (new Date(a.dateRep) as any) - (new Date(b.dateRep) as any);
+        });
+      });
     });
     this.isComplete = true;
   }
 
   public getData(country: string){
+    console.log('country service');
+    console.log(this.tempList[country]);
     return this.tempList[country];
   }
 
@@ -76,7 +83,6 @@ export class DataServiceService {
   }
   public wait(){
     while (!this.isComplete)
-    {
-    }
+    {}
   }
 }

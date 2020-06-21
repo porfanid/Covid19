@@ -13,7 +13,7 @@ export class FeedService {
   constructor() { }
 
   getFeedContent(url: string): any{
-    return JSONreader.getJSON(this.rssToJsonServiceBaseUrl + url);
+    return JSONreader.getJSON(this.rssToJsonServiceBaseUrl + url, false);
   }
 
   private extractFeeds(res: Response): Feed {

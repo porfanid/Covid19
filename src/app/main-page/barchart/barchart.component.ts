@@ -1,17 +1,19 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {DataServiceService} from '../../modules/data-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {DataServiceService} from '../modules/data-service.service';
 
 @Component({
-  selector: 'app-data',
-  templateUrl: './data.component.html',
-  styleUrls: ['./data.component.css']
+  selector: 'app-barchart',
+  templateUrl: './barchart.component.html',
+  styleUrls: ['./barchart.component.scss']
 })
+export class BarchartComponent implements OnInit, OnDestroy {
 
-export class DataComponent implements OnInit, OnDestroy {
   data;
   private country;
-  private sub;
+  sub;
+
+  totalDeaths = 0;
   constructor(private dataService: DataServiceService, private route: ActivatedRoute, private router: Router) {
   }
 
@@ -22,13 +24,12 @@ export class DataComponent implements OnInit, OnDestroy {
       if (!this.data) {
         this.router.navigate(['']);
       }
+      this.totalDeaths = this.data.totalDeaths;
     });
-  }
-  toInt(n: string): number{
-    return parseInt(n, 10);
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
 }
